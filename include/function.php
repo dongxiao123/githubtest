@@ -12,6 +12,50 @@ class LYG{
 			exit;
 		}
 	}
+
+    /**
+     * 判断是否是超级管理员
+     * @author：dongx
+     * @return bool
+     */
+    public static function isAdmin()
+    {
+        if (isset($_SESSION['username']) && $_SESSION['uid'] == 1)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    /**
+     * 校验必填参数
+     * @param array $arr $arr
+     *
+     * @author：dongx
+     * @return string
+     */
+    public static function checkRequired($arr)
+    {
+        $str = true;
+        foreach ($arr as $k => $v)
+        {
+            if (!isset($_REQUEST[$k]) || trim($_REQUEST[$k]) == '')
+            {
+                $str .= ',' . $v;
+            }
+        }
+        if ($str !== true)
+        {
+            $str = trim($str, ',');
+        }
+
+        return $str;
+
+
+    }
 	//根据记录总数获取总分页数
 	public static function getTotalPage($totalcount,$pagesize=10){
 		if($totalcount<1){return 0;}

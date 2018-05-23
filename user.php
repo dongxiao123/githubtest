@@ -29,9 +29,16 @@ if(!empty($_POST)){
 	die();
 }
 
-	
-$id	=$_SESSION['uid'];
 
+$id	=$_SESSION['uid'];
+//超管可以修改其他人的密码
+if ($id == 1)
+{
+    if (isset($_GET['id']))
+    {
+        $id = $_GET['id'];
+    }
+}
 //查询数据
 $sql='select * from #__user where id='.$id;
 $data	=$con->find($sql);

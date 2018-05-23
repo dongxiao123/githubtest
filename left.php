@@ -45,15 +45,26 @@ li.active a{color:#fff}
 <body>
 
 <ul>
-	<li class='active'><a href="default.php" target="right">后台首页</a></li>	
-	<li><a href="order_list.php" target="right">订单列表</a></li>
-	<li><a href="class_list.php" target="right">分类管理</a></li>
-	<li><a href="goods_list.php" target="right">商品管理</a></li>
-	<li><a href="config_email.php" target="right">邮件通知</a></li>
-	<li><a href="getcode.php" target="right">调用代码</a></li>
-	<li><a href="payment.php" target="right">支付方式</a></li>
-	<li><a href="user.php" target="right">修改密码</a></li>
-	<li><a href="log_list.php" target="right">系统日志</a></li>
+	<li class='active'><a href="default.php" target="right">后台首页</a></li>
+    <?php
+       if(LYG::isAdmin()){
+          echo "
+          <li><a href=\"user_list.php\" target=\"right\">用户列表</a></li>
+	<li><a href=\"order_list.php\" target=\"right\">订单列表</a></li>
+	<li><a href=\"class_list.php\" target=\"right\">分类管理</a></li>
+	<li><a href=\"goods_list.php\" target=\"right\">商品管理</a></li>
+	<li><a href=\"config_email.php\" target=\"right\">邮件通知</a></li>
+	<li><a href=\"getcode.php\" target=\"right\">调用代码</a></li>
+	<li><a href=\"payment.php\" target=\"right\">支付方式</a></li>
+	<li><a href=\"user.php\" target=\"right\">修改密码</a></li>
+	<li><a href=\"log_list.php\" target=\"right\">系统日志</a></li>";
+       }else{
+           echo "
+	<li><a href=\"order_list.php\" target=\"right\">订单列表</a></li>
+	<li><a href=\"user.php\" target=\"right\">修改密码</a></li>";
+       }
+    ?>
+
 </ul>
 </body>
 </html>

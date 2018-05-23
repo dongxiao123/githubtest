@@ -85,7 +85,7 @@ $fenye=LYG::getPageHtml($page,$datacount,$pagesize);
                 $uid	=$_SESSION['uid'];
                 //超级管理员才能删除用户
                 if($uid==1){
-                    echo "<a class=\"del\" href=\"user.php?id={$v['id']}\">修改密码</a>";
+                    echo "<a class=\"edit\" href=\"user.php?id={$v['id']}\">修改密码</a>";
                 }
                 ?>
 

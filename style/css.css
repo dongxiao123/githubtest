@@ -1,0 +1,68 @@
+@charset "utf-8";
+/* CSS Document */
+*{ margin:0; padding:0; outline:0; list-style:none; text-decoration:none;}
+body{ background-color:#fff; font-family: 'Microsoft Yahei';}
+body.content{ padding:10px;}
+table{width:100%; margin-left:-1px; border-width:0; border-style:solid; border-color:#ccc;}
+td,th{border-width:0 0 1px 0; border-style:solid; border-color:#ccc;}
+th{ background-color:#333366;background:-webkit-gradient(linear, 0 0, 0 bottom, from(#515451), to(#747d76)); color:#fff; font-size:13px; height: 32px;font-weight:normal}
+td{ font-size:12px; padding:2px 3px; height: 36px;}
+a.msg,a.edit{ color:#399;position:relative;}
+a.del{padding-left:12px;position:relative;color:#c50707}
+a.del:before{content: '';
+    display: block;
+    position: absolute;
+    width: 10px;
+    height: 2px;
+    background: #c50707;
+    left: 0;
+    top: 8px;
+    transform: rotate(45deg);
+}
+a.del:after{content: '';
+    display: block;
+    position: absolute;
+    width: 10px;
+    height: 2px;
+    background: #c50707;
+    left: 0;
+    top: 8px;
+    transform: rotate(315deg);
+}
+
+tr.list{transition:all ease .2s;
+-webkit-transition:all ease .2s;
+-moz-transition:all ease .2s;
+-o-transition:all ease .2s;
+-ms-transition:all ease .2s;}
+tr.list:hover{background-color:#CCCCCC;}
+
+input.inp{width:50%; height:30px;}
+input.sub{width:60px;height:26px; border:0;background-color:red;color:#fff;}
+input.reset{width:60px;height:26px; border:0;background-color:blue;color:#fff;}
+input.edit{width:60px;height:26px; border:0;background-color:blue;color:#fff;}
+input.text{ width: 100%; box-sizing: border-box; height: 30px; border:1px solid #ccc; }
+
+textarea{width:50%;height:60px;resize:none;}
+
+h5.back{ font-weight:normal; padding-bottom:6px;}
+h5.back span{display:inline-block; line-height:26px; font-size:14px; width:60px; background-color:#000; color:#fff; text-align:center;cursor:pointer;}
+.pages{}
+.pages a{margin-right:3px; min-width:10px;padding:0 6px;}
+.pages a.thispage{font-weight:bold;}
+
+i.orderstatus {font-style:normal; margin-right:10px;}\
+i.status0{color:#333;}
+i.status1{color:blue;}
+i.status2{color:#228810;}
+
+p.toadd{ padding:10px; font-size:16px; }
+p.toadd a{ color:#333; text-decoration: none; color:blue ; font-weight: bold; }
+
+select.select{ min-width:150px; height: 30px; border:1px solid #ccc; }
+select.bai{ min-width:auto; width: 100%;box-sizing: border-box; }
+select.pagesize{height: 24px;border: 1px solid #ccc;border-radius: 3px;display:inline-block;margin:0 2px;}
+
+table.table-add{ border-width: 1px 0 0 1px; border-style: solid; border-color: #ccc }
+table.table-add td{border-width: 0 1px 1px 0; border-style: solid; border-color: #ccc }
+table.table-add tr:nth-child(2n+1){ background: #f9f9f9 }

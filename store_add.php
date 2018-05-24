@@ -10,7 +10,12 @@ if(!empty($_POST)){
 	if(empty($storename) || trim($storename)==''){
 		LYG::ShowMsg('门店名不能为空');
 	}
-	$storename= trim($storename);
+	$address= trim($address);
+
+	if(empty($address) || trim($address)==''){
+		LYG::ShowMsg('地址名不能为空');
+	}
+	$address= trim($address);
 	
 	$ex = $con->rowscount("select count(*) from #__store where storename=?",array($storename));
 	if($ex>0){
@@ -18,7 +23,8 @@ if(!empty($_POST)){
 	}
 	
 	$data = array(
-		'storename'	=>$storename
+		'storename'	=>$storename,
+		'address'	=> $address
 	);
 	
 	$aok = $con->add("store",$data);
@@ -51,6 +57,12 @@ if(!empty($_POST)){
 				<td align="right" width='100' height='36'>门店名：</td>
 				<td align="left" width='*'>
 					<input type='text' class='inp' name='storename' placeholder=''/>
+				</td>
+			</tr>
+			<tr>
+			<td align="right" width='100' height='36'>门店地址：</td>
+				<td align="left" width='*'>
+					<input type='text' class='inp' name='address' placeholder=''/>
 				</td>
 			</tr>
 			<tr>

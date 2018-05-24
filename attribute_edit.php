@@ -61,6 +61,8 @@ if(!empty($_POST)){
 					<option value="4">发量</option>
 					<option value="5">挑染</option>
 					<option value="6">修剪</option>
+					<option value="7">发长</option>
+					<option value="8">头旋用量</option>
 				</select>
 				<input type="hidden" name="tag" id="tag" value="<?php echo $info['tag'];?>">
 				<td align="left" width='*'>

@@ -27,11 +27,25 @@ iframe{width: 100%; border: 0 }
     }
     .main-box-l .img-box{
         min-height: 300px;
-        padding: 15px 0 60px 0;
+        padding: 5px 0 15px 0;
     }
     .main-box-l .img-box img{
         max-width: 100%;
         height: auto;
+    }
+    .container .col-sm-6{
+        width: 50%;
+        float: left;
+    }
+    .container .col-sm-3{
+        width: 30%;
+        float: left;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .container .col-sm-9{
+        width: 70%;
+        float: left;
     }
 </style>
 <body>
@@ -101,11 +115,11 @@ iframe{width: 100%; border: 0 }
     </div>
     <div class="main-box row form-horizontal">
         <div class="col-sm-6 main-box-l">
-            <h4>客户本人照片</h4>
+            <p>客户本人照片</p>
             <div class="img-box">
                 <img class="img-rounded" src="https://www.maimai100.cn/static/media/b_03.dbac7caf.png" />
             </div>
-            <h4>客户要求效果</h4>
+            <p>客户要求效果</p>
             <div class="img-box">
                 <img class="img-rounded" src="https://www.maimai100.cn/static/media/b_03.dbac7caf.png" />
             </div>
@@ -211,7 +225,7 @@ iframe{width: 100%; border: 0 }
             <div class="form-group">
                 <label for="" class="col-sm-3 control-label">备注信息：</label>
                 <div class="col-sm-9">
-                    <textarea class="form-control" style="min-height: 200px;" rows="" cols="">备注信息</textarea>
+                    <textarea class="form-control" style="min-height: 160px;" rows="" cols="">备注信息</textarea>
                 </div>
             </div>
         </div>
@@ -219,5 +233,139 @@ iframe{width: 100%; border: 0 }
 </section>
 
 
+
+
+
+
+
+<section class="container ">
+    <div class="header-box">
+        <form>
+            <div class="form-horizontal row">
+
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">店铺名：</label>
+                        <div class="col-sm-9">
+                            <p class="form-control-static text-left">店铺名</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="" class="col-sm-3 control-label">地址：</label>
+                        <div class="col-sm-9">
+                            <p class="form-control-static text-left">地址</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="" class="col-sm-3 control-label">电话：</label>
+                        <div class="col-sm-9">
+                            <p class="form-control-static text-left">地址</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">交货期：</label>
+                        <div class="col-sm-9">
+                            <p class="form-control-static text-left">地址</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="" class="col-sm-3 control-label">订单期：</label>
+                        <div class="col-sm-9">
+                            <p class="form-control-static text-left">地址</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="" class="col-sm-3 control-label">客户姓名：</label>
+                        <div class="col-sm-9">
+                            <p class="form-control-static text-left">地址</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="main-box row form-horizontal">
+        <div class="col-sm-6 main-box-l">
+            <p>客户本人照片</p>
+            <div class="img-box">
+                <img class="img-rounded" src="https://www.maimai100.cn/static/media/b_03.dbac7caf.png" />
+            </div>
+            <p>客户要求效果</p>
+            <div class="img-box">
+                <img class="img-rounded" src="https://www.maimai100.cn/static/media/b_03.dbac7caf.png" />
+            </div>
+        </div>
+        <div class="col-sm-6 main-box-r">
+            <div class="form-group">
+                <label class="col-sm-3 control-label">性别：</label>
+                <div class="col-sm-9 text-left">
+                    <p class="form-control-static text-left">男</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label">发型款式：</label>
+                <div class="col-sm-9">
+                    <p class="form-control-static text-left">发型款式</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="col-sm-3 control-label">发型颜色：</label>
+                <div class="col-sm-9">
+                    <p class="form-control-static text-left">发型颜色</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label">发量：</label>
+                <div class="col-sm-9 text-left">
+                    <p class="form-control-static text-left">发量</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label">挑染：</label>
+                <div class="col-sm-9 text-left">
+                    <p class="form-control-static text-left">挑染</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label">修剪：</label>
+                <div class="col-sm-9 text-left">
+                    <p class="form-control-static text-left">修剪</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="col-sm-3 control-label">发长：</label>
+                <div class="col-sm-9">
+                    <p class="form-control-static text-left">发长</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="col-sm-3 control-label">头旋用料：</label>
+                <div class="col-sm-9">
+                    <p class="form-control-static text-left">头旋用料</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="col-sm-3 control-label">自定义发型：</label>
+                <div class="col-sm-9">
+                    <p class="form-control-static text-left">自定义发型</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="col-sm-3 control-label">头旋位置：</label>
+                <div class="col-sm-9">
+                    <p class="form-control-static text-left">头旋位置</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="col-sm-3 control-label">备注信息：</label>
+                <div class="col-sm-9">
+                    <p class="form-control-static text-left">备注信息</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 </body>
 </html>

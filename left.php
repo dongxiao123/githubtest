@@ -52,6 +52,7 @@ li.active a{color:#fff}
           <li><a href=\"user_list.php\" target=\"right\">用户列表</a></li>
 	<li><a href=\"order_list.php\" target=\"right\">订单列表</a></li>
 	<li><a href=\"class_list.php\" target=\"right\">分类管理</a></li>
+	<li><a href=\"attribute_list.php\" target=\"right\">属性管理</a></li>
 	<li><a href=\"store_list.php\" target=\"right\">门店管理</a></li>
 	<li><a href=\"goods_list.php\" target=\"right\">商品管理</a></li>
 	<li><a href=\"config_email.php\" target=\"right\">邮件通知</a></li>

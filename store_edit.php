@@ -17,14 +17,21 @@ if(!empty($_POST)){
 	if(empty($storename) || trim($storename)==''){
 		LYG::ShowMsg('门店名不能为空');
 	}
+	if(empty($address) || trim($address)==''){
+		LYG::ShowMsg('地址名不能为空');
+	}
 	$storename= trim($storename);
-	
+	$address= trim($address);
+	$data = array(
+		'storename'	=>$storename,
+		'address'	=> $address
+	);
 	$ex = $con->rowscount("select count(*) from #__store where storename=? and id<>$id",array($storename));
 	if($ex>0){
 		lyg::showmsg("同名门店已存在");
 	}
 	
-	$eok = $con->update("update #__store set storename=? where id=$id limit 1",array($storename));
+	$eok = $con->update("update #__store set storename=? where id=$id limit 1",$data);
 
 	if($eok){
 		LYG::ShowMsg('操作成功');
@@ -55,6 +62,12 @@ if(!empty($_POST)){
 				<td align="left" width='*'>
 					<input type='text' class='inp' name='storename' value='<?php echo $info['storename'];?>'/>
 				</td>
+			</tr>
+			<tr>
+			<td align="right" width='100' height='36'>门店地址：</td>
+			<td align="left" width='*'>
+				<input type='text' class='inp' name='address' placeholder=''/>
+			</td>
 			</tr>
 			<tr>
 				<td align="right" height='50'>　</td>

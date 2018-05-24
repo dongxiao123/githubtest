@@ -41,6 +41,7 @@ $fenye=LYG::getPageHtml($page,$datacount,$pagesize);
     	<tr>
             <th width="100">#</th>
             <th width="*">门店名</th>
+			<th width="*">门店地址</th>
             <th width="100">-</th>
         </tr>
     </thead>
@@ -53,6 +54,7 @@ $fenye=LYG::getPageHtml($page,$datacount,$pagesize);
 				?>
 			</td>
         	<td align="center"><?php echo $v['storename'];?></td>
+			<td align="center"><?php echo $v['address'];?></td>
             <td align="center">
 				<a onclick="return confirm('确定删除吗？');" class="del" href="store_del.php?<?php echo 'id='.$v['id'];?>">删除</a>
 			</td>

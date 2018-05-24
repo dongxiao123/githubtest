@@ -83,10 +83,11 @@ if(!empty($_POST)){
 		document.getElementById('tag').value = text;
 	}
 	function selectValue(){
+
 		var s = document.getElementById("type");
-		var tag =  document.getElementById('tag').value;
+		var tag =  <?php echo $info['type'];?>;
 		var ops = s.options;
-		for(var i=0;i<ops.length; i++){
+		for(var i = 0; i < ops.length; i++){
 			var tempValue = ops[i].value;
 			if(tempValue == tag)
 			{

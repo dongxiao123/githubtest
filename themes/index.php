@@ -14,6 +14,8 @@ if(empty($_GET['c']) || intval($_GET['c'])<1){
 $class_id = intval($_GET['c']);
 //商品信息
 $goodsinfo = $con->select("select * from #__goods where class_id=$class_id");
+//门店信息
+$storeinfo = $con->select("select * from #__store order by id desc");
 //宽度
 $_width = "100%";
 if(!empty($_GET['w'])){

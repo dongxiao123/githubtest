@@ -53,8 +53,9 @@ if(!empty($_POST)){
 	<table cellpadding="3" cellspacing="0" class="table-add">
 		<tbody>
 			<tr>
-				<td align="right" width='100' height='36'>属性名：</td>
-				<select name="type" id="type" onchange="changeshow()">
+				<td align="right" height='36'>所属属性：</td>
+				<td align="left" width='*'>
+				<select name="type" id="type" onchange="changeshow()" class="select">
 					<option value ="1">性别</option>
 					<option value ="2">发型款式</option>
 					<option value="3">发型颜色</option>
@@ -64,11 +65,16 @@ if(!empty($_POST)){
 					<option value="7">发长</option>
 					<option value="8">头旋用量</option>
 				</select>
+				</td>
 				<input type="hidden" name="tag" id="tag" value="<?php echo $info['tag'];?>">
+			</tr>
+			<tr>
+				<td align="right" width='100' height='36'>属性名：</td>
 				<td align="left" width='*'>
 					<input type='text' class='inp' name='name' value='<?php echo $info['name'];?>'/>
 				</td>
 			</tr>
+			<tr>
 			<tr>
 				<td align="right" height='50'>　</td>
 				<td align="left"><input class='sub' type='submit' value='修改'/></td>

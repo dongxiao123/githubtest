@@ -122,6 +122,7 @@ function setnotice(){
 <p style='color:#fff;padding:0px 0 0 20px;'><?php echo $_SESSION['username'];?></p>
 
 <p style='padding:0 0 0 20px;'><a href='demo.php' class='topnotice' target='_blank'>前台演示</a></p>
+<p style='padding:0 0 0 20px;'><a href='test.php' class='topnotice' target='_blank'>定做下单</a></p>
 
 <div class="kaiguan">
 	<section class="sevcheckbox">

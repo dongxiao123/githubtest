@@ -52,7 +52,7 @@ $tag8 = $con->select("select * from sev_attribute where type=8");
     <div class="form-group">
         <label for="inputPassword3" class="col-sm-2 control-label">选择门店</label>
         <div class="col-sm-6">
-            <select class="form-control" name="dianpu">
+            <select class="form-control" name="store_id">
                <?php
                foreach ($storeinfo as $v)
                {

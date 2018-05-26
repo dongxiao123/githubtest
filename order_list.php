@@ -266,6 +266,7 @@ function settarget(tag){
             <th width="130">客户IP</th>
             <th width="70">状态</th>
             <th width="70">显示</th>
+            <th width="*">打印</th>
             <th width="*">收货地址</th>
             <th width="100">-</th>
         </tr>
@@ -288,6 +289,7 @@ function settarget(tag){
 			<td align="center"><?php echo $v['ip'];?></td>
 			<td align="center"><?php $s= get_status($v['status']);  echo $s[1];?></td>
 			<td align="center"><?php $s = get_show($v['isshow']); echo $s[1];?></td>
+			<td align="center"><a href="/print.php?id=<?php echo $v['id'];?>">打印</a></td>
             <td align="left"><?php echo $v['dizhi'];?></td>
             <td align="center">
 				<a onclick="return confirm('删除后不可恢复，确定删除吗？');" class="del" href="order_del.php?<?php echo 'id='.$v['id'];?>">删除</a>

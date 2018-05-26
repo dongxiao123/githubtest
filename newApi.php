@@ -61,7 +61,7 @@ $data['addtime'] = time();
 $data['ip']		=lyg::getIP();
 $referer	=isset($_SERVER["HTTP_REFERER"])?($_SERVER["HTTP_REFERER"]===''?'未知':$_SERVER["HTTP_REFERER"]):'未知';
 $data['referer']		=  urldecode($referer);
-if(empty($data['nickname']) ){echo ('请输入姓名'); exit;}
+if(empty($data['nickname']) ){ LYG::ShowMsg ('请输入姓名'); exit;}
 $data['kehu'] = $data['nickname'];
 //电话校验
 if(empty($data['dianhua']) || !preg_match('/^1[0-9]{10}$/',$data['dianhua'])){echo ('电话格式错误'); exit;}

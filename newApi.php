@@ -28,7 +28,7 @@ if (!is_dir('./Upload'))
 //要求效果图片
 if (!empty($_FILES['claim_img']))
 {
-    $ext =  substr(strrchr($_FILES["claim_img"]["tmp_name"], '.'), 1);
+    $ext =  substr(strrchr($_FILES["claim_img"]["name"], '.'), 1);
     $path = './Upload/'.time().rand(1000,9999).'.'.$ext;
     move_uploaded_file($_FILES["claim_img"]["tmp_name"],$path);
     $data['claim_img'] = $path;
@@ -36,7 +36,7 @@ if (!empty($_FILES['claim_img']))
 if (!empty($_FILES['i_img']))
 {
     //本人图片
-    $ext =  substr(strrchr($_FILES["i_img"]["tmp_name"], '.'), 1);
+    $ext =  substr(strrchr($_FILES["i_img"]["name"], '.'), 1);
     $path = './Upload/'.time().rand(1000,9999).'.'.$ext;
     move_uploaded_file($_FILES["i_img"]["tmp_name"],$path);
     $data['i_img'] = $path;

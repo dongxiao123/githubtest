@@ -6,6 +6,9 @@
     <title>提交订单-尚新假发定做</title>
     <!--<link type="text/css" href="/style/bootstrap-3.3.7-dist/css/bootstrap.css"/>-->
     <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <meta   http-equiv= "Pragma"   content= "no-cache" />
+    <meta   http-equiv= "Cache-Control"   content= "no-cache" />
+    <meta   http-equiv= "Expires"   content= "0" />
 </head>
 
 <body>
@@ -14,6 +17,7 @@
 
 <?php
 require_once('./include/mysql.php');
+session_start();
 $storeinfo = $con->select("select * from sev_store order by id desc");
 // 发型款式2 发型颜色3 发量4 挑染5 修剪6 发长7 头旋用量8
 $tag2 = $con->select("select * from sev_attribute where type=2");
@@ -23,13 +27,15 @@ $tag5 = $con->select("select * from sev_attribute where type=5");
 $tag6 = $con->select("select * from sev_attribute where type=6");
 $tag7 = $con->select("select * from sev_attribute where type=7");
 $tag8 = $con->select("select * from sev_attribute where type=8");
+$store_id = isset($_GET['store_id']) ? $_GET['store_id'] : 0;
+
 ?>
 <br />
-<form class="form-horizontal" action="/newApi.php" method="post" enctype="multipart/form-data">
+<form class="form-horizontal" action="/newApi.php" method="post" enctype="multipart/form-data" >
     <div class="form-group">
         <label for="inputEmail3" class="col-sm-2 control-label">电话</label>
         <div class="col-sm-6">
-            <input type="text" class="form-control" id="inputEmail3" name="tel" placeholder="手机号码">
+            <input type="text" class="form-control" id="inputEmail3"  name="tel" placeholder="手机号码">
         </div>
     </div>
 
@@ -53,7 +59,15 @@ $tag8 = $con->select("select * from sev_attribute where type=8");
                <?php
                foreach ($storeinfo as $v)
                {
-                 echo "<option value=\"".$v['id']."\">".$v['storename']."</option></option>";
+                   if ($store_id == $v['id'])
+                   {
+                       echo "<option selected = 'selected' value=\"".$v['id']."\">".$v['storename']."1</option></option>";
+                   }
+                   else
+                   {
+                       echo "<option value=\"".$v['id']."\">".$v['storename']."</option></option>";
+                   }
+
                }
                ?>
 
@@ -192,7 +206,7 @@ $tag8 = $con->select("select * from sev_attribute where type=8");
      <div class="form-group">
         <label for="exampleInputFile" class="col-sm-2 control-label" >备注</label>
         <div class="col-sm-6">
-            <textarea class="form-control" rows="3" name="remark"></textarea>
+            <textarea class="form-control" rows="3"  name="remark"></textarea>
         </div>
     </div>
 

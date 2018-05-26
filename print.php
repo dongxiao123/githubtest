@@ -119,12 +119,12 @@ $store = $con->find("select * from sev_store where id = ".$order['store_id']);
         <div class="col-sm-6 main-box-l">
             <p>客户本人照片</p>
             <div class="img-box">
-                <img class="img-rounded" src="<?php echo $order['i_img'] ?>" />
+                <img class="img-rounded" width="200" height="300" src="<?php echo $order['i_img'] ?>" />
 
             </div>
             <p>客户要求效果</p>
             <div class="img-box">
-                <img class="img-rounded" src="<?php echo $order['claim_img'] ?>" />
+                <img class="img-rounded"  width="200" height="300"  src="<?php echo $order['claim_img'] ?>" />
             </div>
         </div>
         <div class="col-sm-6 main-box-r">

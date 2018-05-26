@@ -17,7 +17,8 @@ if(!empty($data)){
 	
 	$_SESSION['uid']=$data['id'];
 	$_SESSION['username']=$data['username'];
-	header("Location:admin.php"); 
+	$_SESSION['store_id']=$data['shop_name'];
+	header("Location:admin.php");
 }else{
 	LYG::ShowMsg('账号密码错误');
 }

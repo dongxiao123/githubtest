@@ -6,7 +6,13 @@ require('include/mysql.php');
 require('include/function.php');
 
 
-
+//间隔限制
+if(isset($_SESSION['last'])){
+    if(time()-intval($_SESSION['last'])<10){
+        //10秒内不允许重复提交
+        ajaxreturn('提交过于频繁，请稍后再试');
+    }
+}
 //参数校验
 /*
 商品    gid
@@ -69,6 +75,7 @@ if(empty($data['dianhua']) || !preg_match('/^1[0-9]{10}$/',$data['dianhua'])){ec
 $ret = $con->add('order',$data);
 if ($ret)
 {
+    $_SESSION['last']=time();
     LYG::ShowMsg('添加成功'); //echo ("保存成功");
 }else{
     LYG::ShowMsg('添加失败，请重试');

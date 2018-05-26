@@ -39,7 +39,7 @@ $tag8 = $con->select("select * from sev_attribute where type=8");
     <div class="form-group">
         <label for="inputEmail3" class="col-sm-2 control-label">交货日期</label>
         <div class="col-sm-6">
-            <input type="text" class="form-control" id="inputEmail3" placeholder="2018-05-20">
+            <input type="date" class="form-control" id="inputEmail3" placeholder="2018-05-20" name="delivery">
         </div>
     </div>
     <div class="form-group">

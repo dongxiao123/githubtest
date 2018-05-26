@@ -58,6 +58,9 @@ $data['delivery'] = isset($_POST['delivery']) ? $_POST['delivery'] : date('Y-m-d
 $data['nickname'] = isset($_POST['name']) ? trim($_POST['name']) : "";
 $data['liuyan'] = isset($_POST['remark']) ? trim($_POST['remark']) : "";
 $data['addtime'] = time();
+$data['ip']		=lyg::getIP();
+$referer	=isset($_SERVER["HTTP_REFERER"])?($_SERVER["HTTP_REFERER"]===''?'未知':$_SERVER["HTTP_REFERER"]):'未知';
+$data['referer']		=  urldecode($referer);
 if(empty($data['nickname']) ){echo ('请输入姓名'); exit;}
 $data['kehu'] = $data['nickname'];
 //电话校验
@@ -66,6 +69,8 @@ if(empty($data['dianhua']) || !preg_match('/^1[0-9]{10}$/',$data['dianhua'])){ec
 $ret = $con->add('order',$data);
 if ($ret)
 {
-    echo ("保存成功");
+    LYG::ShowMsg('添加成功'); //echo ("保存成功");
+}else{
+    LYG::ShowMsg('添加失败，请重试');
 }
 exit;

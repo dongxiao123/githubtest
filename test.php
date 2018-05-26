@@ -85,7 +85,7 @@ $tag8 = $con->select("select * from sev_attribute where type=8");
                 <?php
                 foreach ($tag3 as $v)
                 {
-                    echo "<option value=\"".$v['id']."\">".$v['name']."</option></option>";
+                    echo "<option value=\"".$v['name']."\">".$v['name']."</option></option>";
                 }
                 ?>
             </select>
@@ -98,7 +98,7 @@ $tag8 = $con->select("select * from sev_attribute where type=8");
                 <?php
                 foreach ($tag2 as $v)
                 {
-                    echo "<option value=\"".$v['id']."\">".$v['name']."</option></option>";
+                    echo "<option value=\"".$v['name']."\">".$v['name']."</option></option>";
                 }
                 ?>
             </select>
@@ -111,7 +111,7 @@ $tag8 = $con->select("select * from sev_attribute where type=8");
                 <?php
                 foreach ($tag4 as $v)
                 {
-                    echo "<option value=\"".$v['id']."\">".$v['name']."</option></option>";
+                    echo "<option value=\"".$v['name']."\">".$v['name']."</option></option>";
                 }
                 ?>
             </select>
@@ -125,7 +125,7 @@ $tag8 = $con->select("select * from sev_attribute where type=8");
                 <?php
                 foreach ($tag5 as $v)
                 {
-                    echo "<option value=\"".$v['id']."\">".$v['name']."</option></option>";
+                    echo "<option value=\"".$v['name']."\">".$v['name']."</option></option>";
                 }
                 ?>
             </select>
@@ -138,7 +138,7 @@ $tag8 = $con->select("select * from sev_attribute where type=8");
                 <?php
                 foreach ($tag6 as $v)
                 {
-                    echo "<option value=\"".$v['id']."\">".$v['name']."</option></option>";
+                    echo "<option value=\"".$v['name']."\">".$v['name']."</option></option>";
                 }
                 ?>
             </select>
@@ -152,7 +152,7 @@ $tag8 = $con->select("select * from sev_attribute where type=8");
                 <?php
                 foreach ($tag7 as $v)
                 {
-                    echo "<option value=\"".$v['id']."\">".$v['name']."</option></option>";
+                    echo "<option value=\"".$v['name']."\">".$v['name']."</option></option>";
                 }
                 ?>
             </select>
@@ -165,7 +165,7 @@ $tag8 = $con->select("select * from sev_attribute where type=8");
                 <?php
                 foreach ($tag8 as $v)
                 {
-                    echo "<option value=\"".$v['id']."\">".$v['name']."</option></option>";
+                    echo "<option value=\"".$v['name']."\">".$v['name']."</option></option>";
                 }
                 ?>
             </select>
@@ -193,9 +193,9 @@ $tag8 = $con->select("select * from sev_attribute where type=8");
     </div>
 
      <div class="form-group">
-        <label for="exampleInputFile" class="col-sm-2 control-label" name="remark">备注</label>
+        <label for="exampleInputFile" class="col-sm-2 control-label" >备注</label>
         <div class="col-sm-6">
-            <textarea class="form-control" rows="3"></textarea>
+            <textarea class="form-control" rows="3" name="remark"></textarea>
         </div>
     </div>
 

@@ -18,12 +18,13 @@ if(!empty($_POST)){
 	if($dianhua==''){
 		LYG::ShowMsg('电话不能为空');
 	}
-	$shangpin_id = intval($shangpin_id);
-	$shuliang = intval($shuliang);
 
-	if($dizhi==''){
-		LYG::ShowMsg('地址不能为空');
-	}
+	$shangpin_id = isset($shangpin_id)?intval($shangpin_id):'0';
+	$shuliang = isset($shuliang)?intval($shuliang):'0';
+
+//	if($dizhi==''){
+//		LYG::ShowMsg('地址不能为空');
+//	}
 	$status = intval($status)%3;
 	$isshow = intval($isshow)%2;
 	
@@ -31,8 +32,7 @@ if(!empty($_POST)){
 		LYG::ShowMsg('设置了展示信息，但展示昵称为空');
 	}
 		
-	$result	= $con->Update("update #__order set kehu=? ,dianhua=?,shangpin_id=?,shuliang=?,dizhi=?,liuyan=?,jindu=?,status=?,isshow=?,nickname=? where id=? limit 1",
-	array($kehu,$dianhua,$shangpin_id,$shuliang,$dizhi,$liuyan,$jindu,$status,$isshow,$nickname,$dataid));
+	$result	= $con->Update("update #__order set kehu='$kehu' ,dianhua='$dianhua',shangpin_id='$shangpin_id',shuliang='$shuliang',dizhi='$dizhi',liuyan='$liuyan',jindu='$jindu',status='$status',isshow='$isshow',nickname='$nickname' where id='$dataid' limit 1");
 	if($result){
 		LYG::ShowMsg('修改成功');
 	}else{

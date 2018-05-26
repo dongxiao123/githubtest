@@ -42,7 +42,6 @@ if (!empty($_FILES['i_img']))
     $data['i_img'] = $path;
 }
 
-
 //性别 默认女
 $data['sex'] = isset($_POST['sex']) ? $_POST['sex'] : 0;
 $data['colour'] = isset($_POST['colour']) ? $_POST['colour'] : "";
@@ -59,6 +58,9 @@ $data['delivery'] = isset($_POST['delivery']) ? $_POST['delivery'] : date('Y-m-d
 $data['nickname'] = isset($_POST['name']) ? trim($_POST['name']) : "";
 $data['liuyan'] = isset($_POST['remark']) ? trim($_POST['remark']) : "";
 $data['addtime'] = time();
+$data['ip']		=lyg::getIP();
+$referer	=isset($_SERVER["HTTP_REFERER"])?($_SERVER["HTTP_REFERER"]===''?'未知':$_SERVER["HTTP_REFERER"]):'未知';
+$data['referer']		=  urldecode($referer);
 if(empty($data['nickname']) ){echo ('请输入姓名'); exit;}
 $data['kehu'] = $data['nickname'];
 //电话校验

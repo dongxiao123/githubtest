@@ -4,7 +4,18 @@ require_once('include/mysql.php');
 require_once('include/function.php');
 
 LYG::checklogin();
-
+$_SESSION['uid'];
+//超管
+if ($_SESSION['uid'] == 1)
+{
+    $store_id = ' and  1=1 ';
+}
+else
+{
+    $sql = "select #__user.* from #__user where id=" . $_SESSION['uid'];
+    $thisUser = $con->select($sql);
+    $store_id = $thisUser[0]['shop_name'];
+}
 $_k = array();
 $_v = array();
 
@@ -134,6 +145,8 @@ $goodsinfo = array();
 if(array_key_exists('class_id',$_s)){
     $goodsinfo = $con->select("select * from #__goods where class_id = ?",array($_s['class_id']));
 }
+
+
 ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -273,7 +286,13 @@ function settarget(tag){
     </thead>
     <tbody>
 	<?php foreach($data as $k=>$v){?>
-    	<tr class='list'>
+    	<?php
+        if (is_numeric($store_id) && ($v['store_id'] != $store_id))
+        {
+            continue;
+        }
+        ?>
+        <tr class='list'>
         	<td align="center">
 			<?php 
 			echo "<a class='edit' href='order_edit.php?id={$v['id']}' title='点击进入修改'>{$v['id']}</a>　";

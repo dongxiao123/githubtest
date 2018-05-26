@@ -34,12 +34,15 @@ if(isset($_GET['p']) && intval($_GET['p'])>0){
 }
 $start_id=($page-1)*$pagesize;
 //查询数据
-$sql="select #__user.* from #__user  order by #__user.id desc limit $start_id,$pagesize";
+$sql="select #__user.* from #__user order by #__user.id desc limit $start_id,$pagesize";
 $data	=$con->select($sql);
 
 //得到分页HTML
 $fenye=LYG::getPageHtml($page,$datacount,$pagesize);
 
+//shop
+$sql="select #__store.* from #__store  order by #__store.id desc";
+$shop	=$con->select($sql);
 ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -71,7 +74,15 @@ $fenye=LYG::getPageHtml($page,$datacount,$pagesize);
 			?>			
 			</td>
         	<td align="center"><?php echo $v['username'];?></td>
-        	<td align="center"><?php echo $v['shop_name'];?></td>
+        	<td align="center">
+               <?php
+                  foreach ($shop as $item1){
+                      if($v['shop_name']==$item1['id']){
+                          echo $item1['storename'];
+                      }
+                  }
+                ?>
+            </td>
             <td align="center">
                 <?php
 

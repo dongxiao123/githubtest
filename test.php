@@ -9,6 +9,11 @@
 </head>
 
 <body>
+<div class="box"  style="margin-bottom: 200px;padding-bottom: 200px;border-bottom: 1px solid #ccc; text-align: center; ">
+<h2>尚新假发定做提交系统</h2>
+<img src="tmp/1.jpg" class="bai">
+<div></div>
+
 <?php
 require_once('./include/mysql.php');
 $storeinfo = $con->select("select * from sev_store order by id desc");
@@ -204,6 +209,7 @@ $tag8 = $con->select("select * from sev_attribute where type=8");
             <button type="submit" class="btn btn-default">提交订单</button>
         </div>
     </div>
+</div>
 </form>
 </body>
 </html>

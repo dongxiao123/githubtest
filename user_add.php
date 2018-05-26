@@ -43,11 +43,15 @@ if(!empty($_POST)){
 	}else{
 		LYG::ShowMsg('添加失败，请重试');
 	}
-	
+
+
+
 	die();
 }
 
-
+//查询数据
+$sql="select #__store.* from #__store  order by #__store.id desc";
+$shop	=$con->select($sql);
 ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -78,7 +82,12 @@ if(!empty($_POST)){
 			<tr>
 				<td align="right" height='36'>店铺名：</td>
 				<td>
-					<input type="text" name="shop_name" class="inp">
+                    <select name="shop_name" style="width: 50%">
+                        <?php foreach($shop as $k=>$v){?>
+                             <option  value="<?php echo $v['id'];?>"><?php echo $v['storename'];?></option>
+                        <?php }?>
+                    </select>
+
 				</td>
 			</tr>
 			<tr>

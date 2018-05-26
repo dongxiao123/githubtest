@@ -110,7 +110,7 @@ if(isset($_GET['p']) && is_numeric($_GET['p']) && intval($_GET['p'])>0){
 }
 $start_id=($page-1)*$pagesize;
 //查询数据
-$sql="select #__order.*,#__class.classname,#__goods.goods from #__order left join #__class on #__class.id=#__order.fenlei_id left join #__goods on #__goods.id=#__order.shangpin_id $_k order by #__order.status asc, #__order.id desc limit $start_id,$pagesize";
+$sql="select #__order.*,#__store.storename,#__class.classname,#__goods.goods from #__order  left join #__store on #__store.id=#__order.store_id left join #__class on #__class.id=#__order.fenlei_id left join #__goods on #__goods.id=#__order.shangpin_id $_k order by #__order.status asc, #__order.id desc limit $start_id,$pagesize";
 $data	=$con->select($sql,$_v);
 //得到分页HTML
 $fenye=LYG::getPageHtml($page,$datacount,$pagesize,$_c);
@@ -271,7 +271,7 @@ function settarget(tag){
             <th width="70">#</th>
             <th width="120">姓名</th>
             <th width="120">电话</th>
-            <th width="120">发型</th>
+            <th width="120">所属店铺</th>
             <th width="200">商品</th>
             <th width="120">分类</th>
             <th width="60">数量</th>
@@ -300,7 +300,7 @@ function settarget(tag){
 			</td>
         	<td align="center"><?php echo $v['kehu'];?></td>
             <td align="center"><?php echo $v['dianhua'];?></td>
-            <td align="center"><?php echo $v['faxing'];?></td>
+            <td align="center"><?php echo $v['storename'];?></td>
             <td align="center"><?php echo $v['goods'];?></td>
             <td align="center"><?php echo $v['classname'];?></td>
             <td align="center"><?php echo $v['shuliang'];?></td>

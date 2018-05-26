@@ -4,15 +4,13 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>提交订单-尚新假发定做</title>
-    <!--<link type="text/css" href="style/bootstrap-3.3.7-dist/css/bootstrap.css"/>-->
+    <!--<link type="text/css" href="/style/bootstrap-3.3.7-dist/css/bootstrap.css"/>-->
     <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css">
 </head>
 
 <body>
-<div class="box"  style="margin-bottom: 200px;padding-bottom: 200px;border-bottom: 1px solid #ccc; text-align: center; ">
+<div class="box"  style="border-bottom: 1px solid #ccc; text-align: center; ">
 <h2>尚新假发定做提交系统</h2>
-<img src="tmp/1.jpg" class="bai">
-<div></div>
 
 <?php
 require_once('./include/mysql.php');
@@ -26,12 +24,6 @@ $tag6 = $con->select("select * from sev_attribute where type=6");
 $tag7 = $con->select("select * from sev_attribute where type=7");
 $tag8 = $con->select("select * from sev_attribute where type=8");
 ?>
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
 <br />
 <form class="form-horizontal" action="/newApi.php" method="post" enctype="multipart/form-data">
     <div class="form-group">

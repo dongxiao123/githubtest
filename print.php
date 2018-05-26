@@ -3,10 +3,51 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>提交订单-尚新假发定做</title>
+    <title>打印订单-尚新假发定做</title>
     <!--<link type="text/css" href="style/bootstrap-3.3.7-dist/css/bootstrap.css"/>-->
     <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css">
 </head>
+<style type="text/css">
+    *{ margin: 0; padding: 0; }
+    body{ text-align: center; }
+    .box{ width: 100%; max-width: 640px; margin: 0 auto; }
+    iframe{width: 100%; border: 0 }
+
+
+
+
+    .header-box{
+        border-bottom: 1px solid #ccc;
+    }
+    .main-box{
+        padding-top: 15px;
+    }
+    .main-box-l{
+        border-right: 1px solid #ccc;
+    }
+    .main-box-l .img-box{
+        min-height: 300px;
+        padding: 5px 0 15px 0;
+    }
+    .main-box-l .img-box img{
+        max-width: 100%;
+        height: auto;
+    }
+    .container .col-sm-6{
+        width: 50%;
+        float: left;
+    }
+    .container .col-sm-3{
+        width: 30%;
+        float: left;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .container .col-sm-9{
+        width: 70%;
+        float: left;
+    }
+</style>
 <body>
 <br />
 <br />

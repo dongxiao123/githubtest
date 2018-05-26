@@ -13,7 +13,7 @@ if(empty($info)){lyg::showmsg('参数错误');}
 if(!empty($_POST)){
 	//参数校验
 	extract($_POST);
-	
+
 	if(empty($name) || trim($name)==''){
 		LYG::ShowMsg('属性名不能为空');
 	}
@@ -21,12 +21,13 @@ if(!empty($_POST)){
 	$type= trim($type);
 	$tag = trim($tag);
 
+
 	$ex = $con->rowscount("select count(*) from #__attribute where name='.$name.' and tag='.$tag.' and id<>$id");
 	if($ex>0){
 		lyg::showmsg("同类属性名已存在");
 	}
 	
-	$eok = $con->update("update #__attribute set name=? where id=$id limit 1",array($name));
+	$eok = $con->update("update #__attribute set name='$name',  type='$type',  tag='$tag' where id=$id limit 1");
 
 	if($eok){
 		LYG::ShowMsg('操作成功');

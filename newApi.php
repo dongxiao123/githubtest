@@ -42,6 +42,7 @@ if (!empty($_FILES['i_img']))
     $data['i_img'] = $path;
 }
 
+
 //性别 默认女
 $data['sex'] = isset($_POST['sex']) ? $_POST['sex'] : 0;
 $data['colour'] = isset($_POST['colour']) ? $_POST['colour'] : "";
@@ -66,6 +67,8 @@ if(empty($data['dianhua']) || !preg_match('/^1[0-9]{10}$/',$data['dianhua'])){ec
 $ret = $con->add('order',$data);
 if ($ret)
 {
-    echo ("保存成功");
+    LYG::ShowMsg('添加成功'); //echo ("保存成功");
+}else{
+    LYG::ShowMsg('添加失败，请重试');
 }
 exit;

@@ -1,8 +1,15 @@
 <?php
 class LYG{
-	public static function ShowMsg($msg){
+	public static function ShowMsg($msg,$s=0){
 		header("Content-type:text/html;charset=utf-8");
-		echo "<script type='text/javascript'>alert('".$msg."');history.go(-1);</script>";
+		if (empty($s)){
+            echo "<script type='text/javascript'>alert('".$msg."');history.go(-1);</script>";
+        }else
+        {
+            echo "<script type='text/javascript'>alert('".$msg."');window.history.go(-1);</script>";
+
+        }
+
 		exit;
 	}
 	

@@ -8,9 +8,10 @@ require('include/function.php');
 
 //间隔限制
 if(isset($_SESSION['last'])){
-    if(time()-intval($_SESSION['last'])<10){
+
+    if(time()-intval($_SESSION['last'])<60){
         //10秒内不允许重复提交
-        ajaxreturn('提交过于频繁，请稍后再试');
+        LYG::ShowMsg('提交过于频繁，请稍后再试');
     }
 }
 //参数校验
@@ -70,13 +71,13 @@ $data['referer']		=  urldecode($referer);
 if(empty($data['nickname']) ){ LYG::ShowMsg ('请输入姓名'); exit;}
 $data['kehu'] = $data['nickname'];
 //电话校验
-if(empty($data['dianhua']) || !preg_match('/^1[0-9]{10}$/',$data['dianhua'])){echo ('电话格式错误'); exit;}
+if(empty($data['dianhua']) || !preg_match('/^1[0-9]{10}$/',$data['dianhua'])){LYG::ShowMsg ('电话格式错误'); exit;}
 
 $ret = $con->add('order',$data);
 if ($ret)
 {
     $_SESSION['last']=time();
-    LYG::ShowMsg('添加成功'); //echo ("保存成功");
+    LYG::ShowMsg('添加成功',true); //echo ("保存成功");
 }else{
     LYG::ShowMsg('添加失败，请重试');
 }

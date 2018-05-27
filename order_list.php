@@ -55,6 +55,18 @@ if(!empty($_GET['faxing']) && trim($_GET['faxing'])!=''){
     $_c[]="faxing=$faxing";
     $_s['faxing'] = $faxing;
 }
+if(!empty($_GET['dianpu']) && trim($_GET['dianpu'])!=''){
+    $dianpu = trim($_GET['dianpu']);
+    $store = $con->find('select id from sev_store where storename like "%'.$dianpu.'%"');
+    if (!empty($store))
+    {
+        $_k[]="#__order.store_id=?";
+        $_v[]=$store['id'];
+        $_c[]=$store['id'];
+        $_s['store'] = $store['id'];
+    }
+
+}
 if(!empty($_GET['time0']) && !empty($_GET['time1']) && 
     preg_match("/^\d{4}\-\d{2}\-\d{2}$/",$_GET['time0']) && preg_match("/^\d{4}\-\d{2}\-\d{2}$/",$_GET['time1'])
 ){
@@ -111,6 +123,7 @@ if(isset($_GET['p']) && is_numeric($_GET['p']) && intval($_GET['p'])>0){
 $start_id=($page-1)*$pagesize;
 //查询数据
 $sql="select #__order.*,#__store.storename,#__class.classname,#__goods.goods from #__order  left join #__store on #__store.id=#__order.store_id left join #__class on #__class.id=#__order.fenlei_id left join #__goods on #__goods.id=#__order.shangpin_id $_k order by #__order.status asc, #__order.id desc limit $start_id,$pagesize";
+
 $data	=$con->select($sql,$_v);
 //得到分页HTML
 $fenye=LYG::getPageHtml($page,$datacount,$pagesize,$_c);
@@ -232,11 +245,11 @@ function settarget(tag){
                         }
                     ?>">
                 </td>
-              <td width="30" align="left">发型</td>
+              <td width="30" align="left">店铺</td>
                 <td width="100">
-                    <input type="text" name="faxing" class="text" value="<?php 
-                        if(array_key_exists("faxing",$_s)){
-                            echo $_s['faxing'];
+                    <input type="text" name="dianpu" class="text" value="<?php
+                        if(array_key_exists("dianpu",$_s)){
+                            echo $_s['dianpu'];
                         }
                     ?>">
                 </td>

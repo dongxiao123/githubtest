@@ -6,12 +6,14 @@
     <title>提交订单-尚新假发定做</title>
     <!--<link type="text/css" href="/style/bootstrap-3.3.7-dist/css/bootstrap.css"/>-->
     <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
     <meta   http-equiv= "Pragma"   content= "no-cache" />
     <meta   http-equiv= "Cache-Control"   content= "no-cache" />
     <meta   http-equiv= "Expires"   content= "0" />
 </head>
 
 <body>
+
 <div class="box"  style="border-bottom: 1px solid #ccc; text-align: center; ">
 <h2>尚新假发定做提交系统</h2>
 
@@ -35,7 +37,7 @@ $store_id = isset($_GET['store_id']) ? $_GET['store_id'] : 0;
     <div class="form-group">
         <label for="inputEmail3" class="col-sm-2 control-label">电话</label>
         <div class="col-sm-6">
-            <input type="text" class="form-control" id="inputEmail3"  name="tel" placeholder="手机号码">
+            <input type="text" class="form-control" id="inputEmail3"  value="" name="tel" placeholder="手机号码">
         </div>
     </div>
 
@@ -48,7 +50,7 @@ $store_id = isset($_GET['store_id']) ? $_GET['store_id'] : 0;
     <div class="form-group">
         <label for="inputEmail3" class="col-sm-2 control-label">客户名称</label>
         <div class="col-sm-6">
-            <input type="text" class="form-control" id="inputEmail3" name="name"  placeholder="客户名称">
+            <input type="text" class="form-control" id="inputEmail3" name="name" value="" placeholder="客户名称">
         </div>
     </div>
 
@@ -185,7 +187,7 @@ $store_id = isset($_GET['store_id']) ? $_GET['store_id'] : 0;
     <div class="form-group">
         <label for="inputEmail3" class="col-sm-2 control-label">自定义发型</label>
         <div class="col-sm-6">
-            <input type="text" class="form-control" id="inputEmail3" name="customize" placeholder="自选">
+            <input type="text" class="form-control" id="inputEmail3" name="customize" value="" placeholder="自选">
         </div>
     </div>
     <div class="form-group">
@@ -206,7 +208,7 @@ $store_id = isset($_GET['store_id']) ? $_GET['store_id'] : 0;
      <div class="form-group">
         <label for="exampleInputFile" class="col-sm-2 control-label" >备注</label>
         <div class="col-sm-6">
-            <textarea class="form-control" rows="3"  name="remark"></textarea>
+            <textarea class="form-control" rows="3"  name="remark" ></textarea>
         </div>
     </div>
 
